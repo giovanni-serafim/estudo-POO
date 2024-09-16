@@ -39,14 +39,8 @@ class Pessoa:
 
 
     def parar_falar(self):
-        if not self.falar:
+        if not self.falando:
             print(f'{self.nome} não entá falando')
         print(f'{self.nome} parou de falar')
         self.falando = False
 
-p1 = Pessoa('marcos', 23)
-
-p1.falar('video game')
-p1.comer('pizza')
-p1.parar_falar()
-p1.comer('pizza')
