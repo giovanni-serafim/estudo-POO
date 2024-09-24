@@ -1,4 +1,7 @@
+#estudando criação de classe, métodos, métodos de classe e métodos estáticos.
 from datetime import datetime
+
+from random import randint
 
 class Pessoa:
 
@@ -16,6 +19,11 @@ class Pessoa:
     def por_ano_nascimento (cls, nome, ano_nascimento):
         idade = cls.ano_atual - ano_nascimento
         return cls(nome, idade)
+    
+    @staticmethod
+    def gerar_id():
+        rand = randint (10000, 19999)
+        return rand
         
 
     def get_ano_nacimento (self):
@@ -59,5 +67,17 @@ class Pessoa:
             print(f'{self.nome} não entá falando')
         print(f'{self.nome} parou de falar')
         self.falando = False
+
+ #testando as funcionalidades.
+ 
+p1 = Pessoa.por_ano_nascimento('luiz', 1987)
+
+print(p1.idade)
+
+p1.falar('video game')
+p1.comer('pizza')
+p1.parar_falar()
+p1.comer('pizza')
+print(Pessoa.gerar_id())
  
 
